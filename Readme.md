@@ -50,6 +50,12 @@ The project uses **Fomantic UI** for styling and basic client-side JavaScript to
 
 3. Open the `index.php` file in a browser or configure your web server to serve the file.
 
+OR 
+you can simply use this command to run the project
+```bash
+php -S 127.0.0.1:8000
+```
+It will run the project on http://127.0.0.1:8000
 ---
 
 ## PHP Code Breakdown
