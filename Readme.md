@@ -44,7 +44,7 @@ The project uses **Fomantic UI** for styling and basic client-side JavaScript to
 
 1. Clone the repository or copy the contents to your server:
    ```bash
-   git clone https://your-repository-url
+   git clone https://github.com/MUHAMMAD-ALI-MAZHAR-BUTT/Purchase-order-PDF
    ```
 2. Make sure the required files are in place (e.g., `index.php`, `logo.jpg`, `main.css`).
 
