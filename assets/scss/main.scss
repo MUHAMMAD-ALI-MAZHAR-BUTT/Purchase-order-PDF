@@ -1,0 +1,306 @@
+// code for pdf styling
+@media print {
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact; // Ensures colors are printed correctly
+    print-color-adjust: exact; // Added for compatibility
+  }
+
+  .no-print {
+    display: none !important; // Hide elements not meant for printing
+  }
+
+  @page {
+    width: 370mm !important;
+    size: A4 !important; // Set A4 page size
+    margin: 10px !important;
+  }
+}
+
+/* Scoped styling to avoid conflict with Semantic UI */
+
+table {
+  border: 1px solid rgb(180, 180, 180);
+}
+td {
+  border: 1px solid rgb(180, 180, 180);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+.custom-po-container {
+  font-family: "Arial", sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
+
+  .ui.header {
+    color: #2a5437 !important;
+    font-size: 24px !important;
+    margin-bottom: 20px;
+  }
+
+  .ui.segment {
+    margin-top: 20px !important;
+    // background-color: #fafafa !important;
+    box-shadow: none !important;
+  }
+  .item-details.ui.segment {
+    border: none !important;
+    margin-top: 0 !important;
+
+    .ui.celled.table {
+      margin-top: 0 !important;
+    }
+  }
+
+  .ui.table {
+    margin-top: 20px;
+    margin-bottom: 0 !important;
+    border-radius: 5px 5px 0 0 !important;
+    // border: 1px solid #ddd;
+    border: 1px solid rgb(180, 180, 180) !important;
+    vertical-align: top !important;
+  }
+
+  .ui.table th {
+    background-color: #2a5437 !important;
+    color: white !important;
+    text-align: center !important;
+    padding: 12px !important;
+  }
+
+  .ui.table td {
+    // text-align: center !important;
+    // padding: 12px !important;
+    color: #333 !important;
+  }
+
+  .total-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // margin-bottom: 15px;
+  }
+
+  .ui.primary.button {
+    background-color: #2a5437 !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    font-size: 16px !important;
+    border-radius: 4px !important;
+    position: fixed;
+    right: 14px;
+    bottom: 20px;
+    z-index: 99999;
+  }
+
+
+  .ui.primary.button:hover {
+    background-color: #183521 !important;
+    transition: background-color 0.3s ease-in-out !important;
+  }
+
+  .ui-celled-table-wraper {
+    overflow-x: auto;
+    max-width: 100%;
+
+    thead {
+      @media (max-width: 767px) {
+        display: none !important;
+        opacity: 0;
+        visibility: hidden;
+        transform: scaleY(0);
+        position: absolute;
+      }
+    }
+    tbody {
+      tr {
+        td {
+          @media (max-width: 767px) {
+            display: flex !important;
+            justify-content: space-between !important;
+            flex-wrap: wrap;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  .ui-celled-table-wraper::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .ui-celled-table-wraper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .ui-celled-table-wraper::-webkit-scrollbar-thumb {
+    background: #2a5437;
+  }
+  .ui-celled-table-wraper::-webkit-scrollbar-thumb:hover {
+    background: #183521;
+  }
+  .orders-details {
+    margin-top: 0 !important;
+    border: none !important;
+
+    td {
+      border: none !important;
+    }
+  }
+  .total-section {
+    border: none !important;
+    padding: 0 !important;
+
+    #total-calculation {
+      border-radius: 5px !important;
+      margin-top: 0 !important;
+    }
+  }
+
+  .orders-details.ui.table {
+    border-top: none !important;
+    border: 1px solid rgb(180, 180, 180);
+    border-radius: none !important;
+
+    td {
+      border-bottom: 1px solid rgb(180, 180, 180) !important;
+    }
+  }
+  .top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background-color: white !important;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid rgb(180, 180, 180);
+
+    .img-wrapper {
+      width: 80px;
+      height: 80px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      @media (max-width: 767px) {
+        width: 100px;
+        height: 100px;
+      }
+    }
+
+    .heading-wrapper {
+      text-align: center;
+
+      h1 {
+        text-transform: uppercase;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+    }
+    .header-details-wrapper {
+      .date-time-wrapper {
+        text-align: end;
+        font-size: 12px;
+        margin-bottom: 10px;
+        color: #df4d2f;
+      }
+      .po-source {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        h4 {
+          margin: 0;
+        }
+        p {
+          margin: 0;
+          font-size: 10px;
+        }
+      }
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  .md-th {
+    font-weight: 600;
+    color: black;
+    display: none !important;
+    padding: 0 6px;
+    margin-right: 6px;
+    border-right: 1px solid rgb(180, 180, 180);
+
+    @media (max-width: 767px) {
+      display: inline-block !important;
+    }
+  }
+}
+
+// index page design
+
+.index-main-wrapper {
+  margin: 0 auto;
+  height: 100vh;
+  width: 100vh;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .content-wraper {
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto;
+    margin: auto 0;
+
+    h1 {
+      font-size: 40px;
+      margin: 0;
+      margin-bottom: 20px;
+
+      @media (max-width: 767px) {
+        font-size: 30px;
+        margin-bottom: 14px;
+      }
+    }
+    a {
+      text-decoration: none;
+
+      button {
+        background-color: #2a5437;
+        color: white;
+        padding: 14px 30px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.3s ease-in-out;
+        border: none;
+
+        &:hover {
+          background-color: #183521 !important;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
